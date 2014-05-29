@@ -42,7 +42,7 @@ func main() {
 		log.Printf("!R Start program with command: %s\n", strings.Join(os.Args[1:], " "))
 		var cmd *exec.Cmd
 		if len(os.Args)>2 {
-			cmd = exec.Command(os.Args[1], strings.Join(os.Args[2:], " "))
+			cmd = exec.Command(os.Args[1], os.Args[2:]...)
 		} else {
 			cmd = exec.Command(os.Args[1])
 		}
